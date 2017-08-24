@@ -1,19 +1,31 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    function Vegetable() {
-
+    function Vegetable(options) {
+      this.name = options.name;
+      this.country = options.country;
+      this.fridge = false;
+      this.type = "vegetable";
     }
 
-    function Fruit() {
-
+    function Fruit(options) {
+      this.name = options.name;
+      this.country = options.country;
+      this.fridge = false;
+      this.type = "fruit";
     }
 
-    function Meat() {
-
+    function Meat(options) {
+      this.name = options.name;
+      this.country = options.country;
+      this.fridge = true;
+      this.type = "meat";
     }
 
-    function Fish() {
-
+    function Fish(options) {
+      this.name = options.name;
+      this.country = options.country;
+      this.fridge = true;
+      this.type = "fish";
     }
 
 
