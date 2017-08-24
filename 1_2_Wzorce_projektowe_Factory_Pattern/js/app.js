@@ -56,8 +56,9 @@ document.addEventListener("DOMContentLoaded", function(){
         var shopForm = document.querySelector("form");
         var showItems = document.querySelector(".item-list");
 
-        function addItemToShop() {
-
+        function addItemToShop(item, type) {
+          var newItem = ShopDatabase.createItem(item,type);
+          listOfItems.push(newItem);
         }
 
 
