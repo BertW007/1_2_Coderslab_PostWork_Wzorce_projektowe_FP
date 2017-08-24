@@ -59,11 +59,17 @@ document.addEventListener("DOMContentLoaded", function(){
         function addItemToShop(item, type) {
           var newItem = ShopDatabase.createItem(item,type);
           listOfItems.push(newItem);
+          render(newItem);
         }
 
 
-        function render() {
-
+        function render(item) {
+          var listElement = document.createElement("li");
+          listElement.innerHTML = "<p>Nazwa: "+item.name+
+                                  "</p><p>Kraj: "+item.country+
+                                  "</p><p>Lodówka: "+(item.fridge?"TAK":"NIE")+
+                                  "</p><p>Typ: "+item.type+"</p>";
+          showItems.appendChild(listElement);
         }
 
         function attachEvent() {
@@ -72,9 +78,11 @@ document.addEventListener("DOMContentLoaded", function(){
             var item = {
                         name: e.target.name.value,
                         type: e.target.item.value,
-                        county: e.target.country.value,
+                        country: e.target.country.value,
                         }
+              addItemToShop(item,item.type);
           });
+
         }
 
         function init() {
