@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  width: 400px;
+  margin: 40px auto;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  min-width: 150px;
+  display: inline-block;
+}
+
+.form-row input,
+.form-row select {
+  min-width: 150px;
+  padding: 5px 15px;
+  font-size: 16px;
+}
+
+.form-submit {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: none;
+  border: 1px solid black;
+  box-shadow: none;
+  margin: 20px auto;
+  display: block;
+}
+
+.item-list {
+  margin-left: 20px;
+}
+
+.item-list li {
+  padding-bottom: 10px;
+}
