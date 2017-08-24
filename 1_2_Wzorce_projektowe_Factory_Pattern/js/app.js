@@ -29,11 +29,26 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 
-    function CreateItemFactory(userType, options) {}
+    function CreateItemFactory() {}
 
-    CreateItemFactory.prototype.createItem = function(options, type) {
+      CreateItemFactory.prototype.createItem = function(options, type) {
+        switch(type) {
+            case "vegetable":
+                return new Vegetable(options);
+                break;
+            case "fruit":
+                return new Fruit(options);
+                break;
+            case "meat":
+                return new Meat(options);
+                break;
+            case "fish":
+                return new Fish(options);
+                break;
+        }
+      }
 
-    }
+    var ShopDatabase = new CreateItemFactory();
 
     var Shop = (function(){
 
@@ -51,7 +66,14 @@ document.addEventListener("DOMContentLoaded", function(){
         }
 
         function attachEvent() {
-
+          shopForm.addEventListener("submit", function(e){
+            e.preventDefault();
+            var item = {
+                        name: e.target.name.value,
+                        type: e.target.item.value,
+                        county: e.target.country.value,
+                        }
+          });
         }
 
         function init() {
